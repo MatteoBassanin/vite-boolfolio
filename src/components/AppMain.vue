@@ -41,13 +41,14 @@ export default {
                 .then(response => {
                     console.log(response);
                     this.projects = response.data.results;
+                    console.log(this.projects);
                 })
 
         }
     },
     mounted() {
         this.getProjects();
-        console.log(this.projects)
+
     }
 
 }
