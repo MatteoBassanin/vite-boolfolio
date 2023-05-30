@@ -40,7 +40,7 @@ export default {
             axios.get(`${this.url}/api/projects`)
                 .then(response => {
                     console.log(response);
-                    this.projects = response.data.results;
+                    this.projects = response.data.result;
                     console.log(this.projects);
                 })
 
