@@ -1,6 +1,18 @@
 <template>
-    <div class="ms_container">
+    <div class="container">
+        <div class="row">
 
+            <div class="col-4" v-for="project in projects">
+                <div class="card" style="width: 18rem;">
+                    <img :src="`${this.url}/storage/${project.image}`" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.content }}</p>
+                        <a href="#" class="btn btn-primary">Mostra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     </div>
@@ -30,10 +42,12 @@ export default {
                     console.log(response);
                     this.projects = response.data.results;
                 })
+
         }
     },
     mounted() {
         this.getProjects();
+        console.log(this.projects)
     }
 
 }
