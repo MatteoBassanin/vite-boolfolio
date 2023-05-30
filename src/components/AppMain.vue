@@ -2,19 +2,10 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-4" v-for="project in projects">
-                <div class="card" style="width: 18rem;">
-                    <img :src="`${this.url}/storage/${project.image}`" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ project.title }}</h5>
-                        <p class="card-text">{{ project.content }}</p>
-                        <a href="#" class="btn btn-primary">Mostra</a>
-                    </div>
-                </div>
-            </div>
+
+            <AppCard v-for="project in projects" :title="project.title"></AppCard>
+
         </div>
-
-
     </div>
 </template>
 
@@ -22,9 +13,14 @@
 
 <script>
 import axios from 'axios';
+import AppCard from './AppCard.vue';
 
 export default {
     name: 'AppMain',
+
+    components: {
+        AppCard,
+    },
     data() {
         return {
             projects: [],
