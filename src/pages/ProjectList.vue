@@ -1,7 +1,9 @@
 <template>
     <div class="container">
         <div class="row">
+            <h3>fdsdfsdfs
 
+            </h3>
 
             <AppCard v-for="project in projects" :title="project.title"></AppCard>
 
@@ -13,10 +15,11 @@
 
 <script>
 import axios from 'axios';
-import AppCard from './AppCard.vue';
+import AppCard from '../components/AppCard.vue';
+import { store } from '../store';
 
 export default {
-    name: 'AppMain',
+    name: 'PostList',
 
     components: {
         AppCard,
@@ -24,7 +27,7 @@ export default {
     data() {
         return {
             projects: [],
-            url: "http://localhost:8000"
+            store
         }
     },
     methods: {
@@ -33,7 +36,7 @@ export default {
             console.log("daje");
 
 
-            axios.get(`${this.url}/api/projects`)
+            axios.get(`${this.store.url}/api/projects`)
                 .then(response => {
                     console.log(response);
                     this.projects = response.data.result;

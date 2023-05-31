@@ -1,7 +1,8 @@
 <template>
     <div class="col-4">
         <div class="card" style="width: 18rem;">
-            <!-- <img :src="`${this.url}/storage/${project.image}`" class="card-img-top" alt="..."> -->
+            <!-- <img:src="`${this.url}/storage/${project.image}`" class="card-img-top" alt="..."> -->
+
             <div class="card-body">
                 <h5 class="card-title">{{ title }}</h5>
                 <p class="card-text">{{ content }}</p>
@@ -13,6 +14,8 @@
 
 
 <script>
+import { store } from '../store';
+
 export default {
     name: 'AppCard',
     props: {
@@ -20,7 +23,7 @@ export default {
     },
     data() {
         return {
-
+            store
         }
     },
 }
