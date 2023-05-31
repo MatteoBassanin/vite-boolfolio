@@ -16,7 +16,7 @@
 <script>
 import axios from 'axios';
 import AppCard from '../components/AppCard.vue';
-import { store } from '../store';
+import { store } from '../store.js';
 
 export default {
     name: 'PostList',

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import AppHome from './pages/AppHome.vue';
-import AppShow from './pages/AppHome.vue';
-import ProjectList from './pages/AppHome.vue';
+import AppShow from './pages/AppShow.vue';
+import ProjectList from './pages/ProjectList.vue';
 
 
 const router = createRouter(
@@ -26,6 +26,7 @@ const router = createRouter(
                 component: ProjectList
 
             }
+
         ]
     }
 );
