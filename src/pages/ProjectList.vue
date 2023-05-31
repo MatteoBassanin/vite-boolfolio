@@ -5,7 +5,7 @@
 
             </h3>
 
-            <AppCard v-for="project in projects" :title="project.title"></AppCard>
+            <AppCard v-for="project in projects" :title="project.title" :slug="project.slug"></AppCard>
 
         </div>
     </div>

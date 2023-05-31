@@ -6,7 +6,10 @@
             <div class="card-body">
                 <h5 class="card-title">{{ title }}</h5>
                 <p class="card-text">{{ content }}</p>
-                <a href="#" class="btn btn-primary">Mostra</a>
+
+
+                <router-link :to="{ name: 'single-project', params: { slug: slug } }"
+                    class="btn btn-primary ">Mostra</router-link>
             </div>
         </div>
     </div>
@@ -20,6 +23,7 @@ export default {
     name: 'AppCard',
     props: {
         title: String,
+        slug: String
     },
     data() {
         return {
