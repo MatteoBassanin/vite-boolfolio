@@ -1,5 +1,12 @@
 <template>
-    <h1>magica</h1>
+    <div v-if="project">
+        <h3>daje roma</h3>
+        <h1>{{ project.title }}</h1>
+        <div class="ms_wrapper">
+            <img :src="`${this.store.url}/storage/${project.image}`" class="card-img-top" alt="...">
+        </div>
+
+    </div>
 </template>
 
 
@@ -12,7 +19,8 @@ export default {
     name: 'SingleProject',
     data() {
         return {
-            store
+            store,
+            project: null
         }
     },
     mounted() {
@@ -20,11 +28,24 @@ export default {
 
         axios.get(`${this.store.url}/api/projects/${slug}`)
             .then(response => {
-                console.log(response)
-            })
+                if (response.data.project) {
+
+                    this.project = response.data.project
+                } else {
+                    this.$router.push({ name: 'page-not-found' });
+                }
+
+            });
 
         console.log(slug);
     }
 
 }
 </script>
+
+
+<style scoped>
+.ms_wrapper {
+    width: 500px;
+}
+</style>

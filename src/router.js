@@ -3,6 +3,7 @@ import AppHome from './pages/AppHome.vue';
 import AppShow from './pages/AppShow.vue';
 import ProjectList from './pages/ProjectList.vue';
 import SingleProject from './pages/SingleProject.vue';
+import PageNotFound from './pages/PageNotFound.vue';
 
 
 const router = createRouter(
@@ -31,6 +32,12 @@ const router = createRouter(
                 path: '/progetti/:slug',
                 name: 'single-project',
                 component: SingleProject
+
+            },
+            {
+                path: '/:pathMatch(.*)*',
+                name: 'page-not-found',
+                component: PageNotFound
 
             }
 
